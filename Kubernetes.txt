@@ -1,0 +1,69 @@
+1.  Loads containers into clusters.  Plans how to get containers to the right clusters.
+Identifies the right cluster, stores informatoin about the clusters and nodes.
+Manages the Kubernetes cluster and does all of the above
+
+a.  Control Plane Components
+b.  Worker nodes
+c.  Kube-ApiServer
+d.  Kuberlet
+
+2.  Its a DB that stores info about all nodes and clusters in K:V
+
+a.  ETCD Cluster
+b.  Worker nodes
+c.  Kube-ApiServer
+d.  Kuberlet
+
+3.  Identifies the right node to put a container on based on requirements.  
+It watches for new pods, clusters and depending on the requirements of the 
+application container and figures out the node that is best for that container
+
+a.  kube-scheduler
+b.  Worker nodes
+c.  Kube-ApiServer
+d.  Kuberlet
+
+4.  Primary management components of Kubernetes.  It orchestrates all operations w/i a 
+cluster.  Exposes the Kubernetes API (used by external users to do mgt opererations on the
+on the cluster + controllers to monitor state + make changes as needed).  It also fetches 
+status reports from the Kublet to monitor the status of the nodes + containers
+within the cluster
+
+a.  kube-apiserver
+b.  Worker nodes
+c.  Kube-ApiServer
+d.  Kuberlet
+
+5.  Makes sure the required number of containers are running at all times  
+
+a.  Replication controller
+b.  Worker nodes
+c.  Kube-ApiServer
+d.  Kuberlet
+
+6.  Its the agent + component of teh node that runs on each node in a cluster.  It listens for 
+instructions from kube-apiserver and deploys/destroys containers on the nodes as required. It
+communicates with the master-node.  Gathers info about teh containers to be loaded in that cluster
+and reports status to teh master node about the status of teh cluster and the containers
+
+a.  Kubelet
+b.  Worker nodes
+c.  Kube-ApiServer
+d.  Kube-proxy
+
+7.  Apps running on nodes need a way to communicate with each other.  This is a node component that runs
+on each and every node that, helps nodes communicate with each other.  This runs on a worker node and
+has the rules of how containers + nodes can communicate with each other
+
+a.  Kube-proxy
+b.  Worker nodes
+c.  Kube-ApiServer
+d.  Container run-time-engine
+
+8.  This is used to host your apps in the form of containers in an automated way.  It allows you
+to easily deploy as many instances of your app as needed  + easily communicate between services
+
+a.  Kubernetes
+b.  Worker nodes
+c.  Kube-ApiServer
+d.  Container run-time-engine
