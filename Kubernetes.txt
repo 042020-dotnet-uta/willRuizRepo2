@@ -2,14 +2,16 @@
 Identifies the right cluster, stores informatoin about the clusters and nodes.
 Manages the Kubernetes cluster and does all of the above
 
-a.  Control Plane Components
+https://kubernetes.io/docs/concepts/overview/components/#control-plane-components
+a.  Control Plane Components  (correct)
 b.  Worker nodes
 c.  Kube-ApiServer
 d.  Kuberlet
 
 2.  Its a DB that stores info about all nodes and clusters in K:V
 
-a.  ETCD Cluster
+https://kubernetes.io/docs/concepts/overview/components/#etcd
+a.  ETCD Cluster  (correct)
 b.  Worker nodes
 c.  Kube-ApiServer
 d.  Kuberlet
@@ -18,25 +20,27 @@ d.  Kuberlet
 It watches for new pods, clusters and depending on the requirements of the 
 application container and figures out the node that is best for that container
 
-a.  kube-scheduler
+https://kubernetes.io/docs/concepts/overview/components/#kube-scheduler
+a.  kube-scheduler (correct)
 b.  Worker nodes
 c.  Kube-ApiServer
 d.  Kuberlet
 
-4.  Primary management components of Kubernetes.  It orchestrates all operations w/i a 
-cluster.  Exposes the Kubernetes API (used by external users to do mgt opererations on the
-on the cluster + controllers to monitor state + make changes as needed).  It also fetches 
-status reports from the Kublet to monitor the status of the nodes + containers
-within the cluster
+4.  When you deploy applications on Kubernetes, you tell the master to start the application containers. 
+The master schedules the containers to run on the cluster's nodes. The nodes communicate with the master 
+using the (xxx), which the master exposes. End users can also use the (xxx) directly to interact with the cluster
 
-a.  kube-apiserver
+https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/
+a.  kube-apiserver (correct)
 b.  Worker nodes
 c.  Kube-ApiServer
 d.  Kuberlet
 
-5.  Makes sure the required number of containers are running at all times  
+5.  Makes sure the required number of containers are running at all times.  Responsible for maintaining 
+the correct number of pods for every replication controller object in the system  
 
-a.  Replication controller
+https://kubernetes.io/docs/concepts/overview/components/#kube-controller-manager
+a.  Replication controller (correct)
 b.  Worker nodes
 c.  Kube-ApiServer
 d.  Kuberlet
@@ -44,26 +48,31 @@ d.  Kuberlet
 6.  Its the agent + component of teh node that runs on each node in a cluster.  It listens for 
 instructions from kube-apiserver and deploys/destroys containers on the nodes as required. It
 communicates with the master-node.  Gathers info about teh containers to be loaded in that cluster
-and reports status to teh master node about the status of teh cluster and the containers
+and reports status to teh master node about the status of the cluster and the containers
 
-a.  Kubelet
+https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/
+a.  Kubelet  (correct)
 b.  Worker nodes
 c.  Kube-ApiServer
 d.  Kube-proxy
 
 7.  Apps running on nodes need a way to communicate with each other.  This is a node component that runs
 on each and every node that, helps nodes communicate with each other.  This runs on a worker node and
-has the rules of how containers + nodes can communicate with each other
+has the rules of how containers + nodes can communicate with each other.  Each node runs a (xxx) process 
+which programs iptables rules to trap access to service IPs and redirect them to the correct backends
 
-a.  Kube-proxy
+https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/architecture.md#kube-proxy 
+a.  Kube-proxy  (correct)
 b.  Worker nodes
 c.  Kube-ApiServer
 d.  Container run-time-engine
 
 8.  This is used to host your apps in the form of containers in an automated way.  It allows you
-to easily deploy as many instances of your app as needed  + easily communicate between services
+to easily deploy as many instances of your app as needed  + easily communicate between services.  Kubernetes is a portable, extensible, 
+open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation
 
-a.  Kubernetes
+https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
+a.  Kubernetes  (correct)
 b.  Worker nodes
 c.  Kube-ApiServer
 d.  Container run-time-engine
